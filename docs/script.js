@@ -114,9 +114,7 @@
   });
 
   // ---------- Active section highlight in nav ----------
-  const navLinks = Array.from(
-    document.querySelectorAll('.nav-links a[href^="#"]'),
-  );
+  const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
   const sectionMap = new Map();
   navLinks.forEach((a) => {
     const id = a.getAttribute('href')?.slice(1);

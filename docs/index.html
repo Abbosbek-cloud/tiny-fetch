@@ -28,11 +28,7 @@
     />
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link
-      rel="preconnect"
-      href="https://cdnjs.cloudflare.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
@@ -143,14 +139,23 @@
           <p class="eyebrow">@syncsoft/tiny-fetch</p>
           <h1>Tiny, zero-dependency, axios-compatible HTTP client.</h1>
           <p class="lead">
-            Built on <code>fetch</code>. ~2.5 KB min+gzip. First-class TypeScript.
-            Interceptors, timeouts, upload progress, and full body-type support — all without a single runtime dependency.
+            Built on <code>fetch</code>. ~2.5 KB min+gzip. First-class TypeScript. Interceptors,
+            timeouts, upload progress, and full body-type support — all without a single runtime
+            dependency.
           </p>
 
           <div class="install-block" data-copy-target="install-cmd">
             <code id="install-cmd">npm install @syncsoft/tiny-fetch</code>
             <button class="copy-btn" data-copy="#install-cmd" aria-label="Copy install command">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
                 <rect x="9" y="9" width="13" height="13" rx="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
@@ -184,27 +189,42 @@
             <div class="feature">
               <div class="feature-icon" aria-hidden="true">∅</div>
               <h3>Zero runtime deps</h3>
-              <p>Nothing in your <code>node_modules</code> tree but tiny-fetch itself. No supply-chain footprint.</p>
+              <p>
+                Nothing in your <code>node_modules</code> tree but tiny-fetch itself. No
+                supply-chain footprint.
+              </p>
             </div>
             <div class="feature">
               <div class="feature-icon" aria-hidden="true">⇄</div>
               <h3>Axios-compatible</h3>
-              <p><code>response.data</code>, <code>error.response.data/status</code>, interceptors — drop-in for most code.</p>
+              <p>
+                <code>response.data</code>, <code>error.response.data/status</code>, interceptors —
+                drop-in for most code.
+              </p>
             </div>
             <div class="feature">
               <div class="feature-icon" aria-hidden="true">TS</div>
               <h3>First-class TypeScript</h3>
-              <p>Types ship with the package. No <code>@types/*</code>. Generic verb helpers infer your response types.</p>
+              <p>
+                Types ship with the package. No <code>@types/*</code>. Generic verb helpers infer
+                your response types.
+              </p>
             </div>
             <div class="feature">
               <div class="feature-icon" aria-hidden="true">⏱</div>
               <h3>Interceptors + timeouts</h3>
-              <p>Same interceptor API as axios. Timeouts via <code>AbortController</code>. Upload progress via XHR.</p>
+              <p>
+                Same interceptor API as axios. Timeouts via <code>AbortController</code>. Upload
+                progress via XHR.
+              </p>
             </div>
             <div class="feature">
               <div class="feature-icon" aria-hidden="true">⌘</div>
               <h3>Browser & Node 20+</h3>
-              <p>Native <code>fetch</code> everywhere. Ships ESM + CJS with proper <code>exports</code> conditions.</p>
+              <p>
+                Native <code>fetch</code> everywhere. Ships ESM + CJS with proper
+                <code>exports</code> conditions.
+              </p>
             </div>
           </div>
         </div>
@@ -214,11 +234,16 @@
       <section class="section" id="install">
         <div class="container">
           <h2>Install</h2>
-          <p>No peer dependencies. No <code>@types/*</code> to install. Node 20+ or any modern browser.</p>
+          <p>
+            No peer dependencies. No <code>@types/*</code> to install. Node 20+ or any modern
+            browser.
+          </p>
 
           <div class="tabs" data-tabs>
             <div class="tab-bar" role="tablist">
-              <button class="tab-btn is-active" role="tab" aria-selected="true" data-tab="npm">npm</button>
+              <button class="tab-btn is-active" role="tab" aria-selected="true" data-tab="npm">
+                npm
+              </button>
               <button class="tab-btn" role="tab" aria-selected="false" data-tab="yarn">yarn</button>
               <button class="tab-btn" role="tab" aria-selected="false" data-tab="pnpm">pnpm</button>
             </div>
@@ -266,7 +291,10 @@ const api = HttpClient.create(config?: HttpConfig);</code></pre>
           <p>Each instance has isolated config and its own interceptor chain.</p>
 
           <h3 id="config">Config</h3>
-          <p><code>HttpConfig</code> applies at instance level; <code>RequestConfig</code> extends it with per-call fields.</p>
+          <p>
+            <code>HttpConfig</code> applies at instance level; <code>RequestConfig</code> extends it
+            with per-call fields.
+          </p>
           <div class="table-wrap">
             <table>
               <thead>
@@ -277,12 +305,44 @@ const api = HttpClient.create(config?: HttpConfig);</code></pre>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><code>baseURL</code></td><td><code>string</code></td><td>Prepended to relative request URLs.</td></tr>
-                <tr><td><code>timeout</code></td><td><code>number</code></td><td>Milliseconds before the request is aborted via <code>AbortController</code>.</td></tr>
-                <tr><td><code>headers</code></td><td><code>HeadersInit</code></td><td>Default headers merged into every request. Accepts a record, a <code>Headers</code> instance, or <code>[string, string][]</code>.</td></tr>
-                <tr><td><code>withCredentials</code></td><td><code>boolean</code></td><td>Send cookies cross-origin (maps to <code>credentials: 'include'</code>).</td></tr>
-                <tr><td><code>responseType</code></td><td><code>'json' | 'text' | 'blob' | 'arraybuffer'</code></td><td>Force response body parser. Inferred from <code>Content-Type</code> when omitted.</td></tr>
-                <tr><td><code>paramsSerializer</code></td><td><code>(params) =&gt; string</code></td><td>Replace the built-in query-string serializer.</td></tr>
+                <tr>
+                  <td><code>baseURL</code></td>
+                  <td><code>string</code></td>
+                  <td>Prepended to relative request URLs.</td>
+                </tr>
+                <tr>
+                  <td><code>timeout</code></td>
+                  <td><code>number</code></td>
+                  <td>
+                    Milliseconds before the request is aborted via <code>AbortController</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>headers</code></td>
+                  <td><code>HeadersInit</code></td>
+                  <td>
+                    Default headers merged into every request. Accepts a record, a
+                    <code>Headers</code> instance, or <code>[string, string][]</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>withCredentials</code></td>
+                  <td><code>boolean</code></td>
+                  <td>Send cookies cross-origin (maps to <code>credentials: 'include'</code>).</td>
+                </tr>
+                <tr>
+                  <td><code>responseType</code></td>
+                  <td><code>'json' | 'text' | 'blob' | 'arraybuffer'</code></td>
+                  <td>
+                    Force response body parser. Inferred from <code>Content-Type</code> when
+                    omitted.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>paramsSerializer</code></td>
+                  <td><code>(params) =&gt; string</code></td>
+                  <td>Replace the built-in query-string serializer.</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -298,26 +358,66 @@ const api = HttpClient.create(config?: HttpConfig);</code></pre>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><code>method</code></td><td><code>string</code></td><td>HTTP method. Verb helpers set this automatically.</td></tr>
-                <tr><td><code>url</code></td><td><code>string</code></td><td>Relative or absolute URL.</td></tr>
-                <tr><td><code>params</code></td><td><code>Record&lt;string, unknown&gt;</code></td><td>Query parameters. Arrays expand to repeated keys; <code>null</code>/<code>undefined</code> are skipped.</td></tr>
-                <tr><td><code>data</code></td><td><code>unknown</code></td><td>Request body. See body handling below.</td></tr>
-                <tr><td><code>signal</code></td><td><code>AbortSignal</code></td><td>External cancellation signal.</td></tr>
+                <tr>
+                  <td><code>method</code></td>
+                  <td><code>string</code></td>
+                  <td>HTTP method. Verb helpers set this automatically.</td>
+                </tr>
+                <tr>
+                  <td><code>url</code></td>
+                  <td><code>string</code></td>
+                  <td>Relative or absolute URL.</td>
+                </tr>
+                <tr>
+                  <td><code>params</code></td>
+                  <td><code>Record&lt;string, unknown&gt;</code></td>
+                  <td>
+                    Query parameters. Arrays expand to repeated keys; <code>null</code>/<code
+                      >undefined</code
+                    >
+                    are skipped.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>data</code></td>
+                  <td><code>unknown</code></td>
+                  <td>Request body. See body handling below.</td>
+                </tr>
+                <tr>
+                  <td><code>signal</code></td>
+                  <td><code>AbortSignal</code></td>
+                  <td>External cancellation signal.</td>
+                </tr>
               </tbody>
             </table>
           </div>
 
           <h4>Body handling</h4>
-          <p>The <code>data</code> field is passed through unchanged for every native <code>BodyInit</code> type:</p>
+          <p>
+            The <code>data</code> field is passed through unchanged for every native
+            <code>BodyInit</code> type:
+          </p>
           <ul>
-            <li><code>FormData</code> — browser sets <code>Content-Type</code> with multipart boundary</li>
-            <li><code>URLSearchParams</code> — browser sets <code>application/x-www-form-urlencoded</code></li>
-            <li><code>Blob</code> / <code>File</code> — <code>Content-Type</code> comes from <code>blob.type</code></li>
+            <li>
+              <code>FormData</code> — browser sets <code>Content-Type</code> with multipart boundary
+            </li>
+            <li>
+              <code>URLSearchParams</code> — browser sets
+              <code>application/x-www-form-urlencoded</code>
+            </li>
+            <li>
+              <code>Blob</code> / <code>File</code> — <code>Content-Type</code> comes from
+              <code>blob.type</code>
+            </li>
             <li><code>ArrayBuffer</code> / typed arrays (<code>Uint8Array</code>, etc.)</li>
             <li><code>ReadableStream</code></li>
             <li><code>string</code></li>
           </ul>
-          <p>Anything else (plain objects, arrays) is <code>JSON.stringify</code>'d and sent with <code>Content-Type: application/json</code>. A caller-supplied <code>Content-Type</code> is always respected.</p>
+          <p>
+            Anything else (plain objects, arrays) is <code>JSON.stringify</code>'d and sent with
+            <code>Content-Type: application/json</code>. A caller-supplied
+            <code>Content-Type</code> is always respected.
+          </p>
 
           <h3 id="verb-helpers">Verb helpers</h3>
           <pre><code class="language-typescript">api.get&lt;T&gt;(url, config?)
@@ -356,7 +456,10 @@ try {
     err.config;            // RequestConfig
   }
 }</code></pre>
-          <p><code>isHttpError(error)</code> is the type guard — use it instead of <code>instanceof</code> across bundler/realm boundaries.</p>
+          <p>
+            <code>isHttpError(error)</code> is the type guard — use it instead of
+            <code>instanceof</code> across bundler/realm boundaries.
+          </p>
         </div>
       </section>
 
@@ -364,7 +467,10 @@ try {
       <section class="section" id="interceptors">
         <div class="container">
           <h2>Interceptors</h2>
-          <p>Same model as axios: <code>use(onFulfilled?, onRejected?)</code> returns an id; <code>eject(id)</code> removes.</p>
+          <p>
+            Same model as axios: <code>use(onFulfilled?, onRejected?)</code> returns an id;
+            <code>eject(id)</code> removes.
+          </p>
 
           <h3 id="auth-token">Attach an auth token</h3>
           <pre><code class="language-typescript">api.interceptors.request.use((config) =&gt; {
@@ -410,7 +516,11 @@ const { data } = await retry(() =&gt; api.get('/flaky'));</code></pre>
           <h2>Recipes</h2>
 
           <h3 id="upload-progress">File upload with progress</h3>
-          <p><code>fetch</code> cannot report upload progress. <code>upload()</code> uses <code>XMLHttpRequest</code> under the hood, runs request interceptors (so auth headers still apply), and exposes a progress callback.</p>
+          <p>
+            <code>fetch</code> cannot report upload progress. <code>upload()</code> uses
+            <code>XMLHttpRequest</code> under the hood, runs request interceptors (so auth headers
+            still apply), and exposes a progress callback.
+          </p>
           <pre><code class="language-typescript">const form = new FormData();
 form.append('file', file);
 form.append('name', 'report.pdf');
@@ -434,7 +544,10 @@ try {
 }</code></pre>
 
           <h3 id="custom-params">Custom params serialization</h3>
-          <p>Built-in serializer matches axios defaults (skip null/undefined, repeat arrays). Override per-request or per-instance:</p>
+          <p>
+            Built-in serializer matches axios defaults (skip null/undefined, repeat arrays).
+            Override per-request or per-instance:
+          </p>
           <pre><code class="language-typescript">import qs from 'qs';
 
 const api = HttpClient.create({
@@ -459,29 +572,74 @@ const api = HttpClient.create({
           <div class="table-wrap">
             <table>
               <thead>
-                <tr><th>axios</th><th>tiny-fetch</th></tr>
+                <tr>
+                  <th>axios</th>
+                  <th>tiny-fetch</th>
+                </tr>
               </thead>
               <tbody>
-                <tr><td><code>axios.create(config)</code></td><td><code>HttpClient.create(config)</code></td></tr>
-                <tr><td><code>response.data</code></td><td><code>response.data</code> ✓</td></tr>
-                <tr><td><code>error.response.data / .status</code></td><td><code>error.response.data / .status</code> ✓</td></tr>
-                <tr><td><code>axios.isAxiosError(e)</code></td><td><code>isHttpError(e)</code></td></tr>
-                <tr><td><code>instance.interceptors.request.use(...)</code></td><td>same ✓</td></tr>
-                <tr><td><code>CancelToken</code></td><td><code>AbortSignal</code> (pass via <code>config.signal</code>)</td></tr>
-                <tr><td><code>responseType</code></td><td>same ✓</td></tr>
-                <tr><td><code>paramsSerializer</code></td><td>same ✓</td></tr>
-                <tr><td><code>transformRequest</code> / <code>transformResponse</code></td><td>use interceptors</td></tr>
+                <tr>
+                  <td><code>axios.create(config)</code></td>
+                  <td><code>HttpClient.create(config)</code></td>
+                </tr>
+                <tr>
+                  <td><code>response.data</code></td>
+                  <td><code>response.data</code> ✓</td>
+                </tr>
+                <tr>
+                  <td><code>error.response.data / .status</code></td>
+                  <td><code>error.response.data / .status</code> ✓</td>
+                </tr>
+                <tr>
+                  <td><code>axios.isAxiosError(e)</code></td>
+                  <td><code>isHttpError(e)</code></td>
+                </tr>
+                <tr>
+                  <td><code>instance.interceptors.request.use(...)</code></td>
+                  <td>same ✓</td>
+                </tr>
+                <tr>
+                  <td><code>CancelToken</code></td>
+                  <td><code>AbortSignal</code> (pass via <code>config.signal</code>)</td>
+                </tr>
+                <tr>
+                  <td><code>responseType</code></td>
+                  <td>same ✓</td>
+                </tr>
+                <tr>
+                  <td><code>paramsSerializer</code></td>
+                  <td>same ✓</td>
+                </tr>
+                <tr>
+                  <td><code>transformRequest</code> / <code>transformResponse</code></td>
+                  <td>use interceptors</td>
+                </tr>
               </tbody>
             </table>
           </div>
 
           <h3 id="known-gaps">Known gaps vs axios</h3>
-          <p>tiny-fetch is intentionally small. If you need these, reach for axios (or add them on top):</p>
+          <p>
+            tiny-fetch is intentionally small. If you need these, reach for axios (or add them on
+            top):
+          </p>
           <ul>
-            <li><strong>Node HTTP agents / proxy config</strong> — use <code>undici.Agent</code> or an HTTPS proxy-aware fetch</li>
-            <li><strong>Auto CSRF / XSRF token attachment</strong> — trivial to add as a request interceptor</li>
-            <li><strong>Automatic retry / backoff</strong> — see <a href="#retry-backoff">recipe above</a></li>
-            <li><strong><code>maxContentLength</code> / <code>maxRedirects</code></strong> — not exposed</li>
+            <li>
+              <strong>Node HTTP agents / proxy config</strong> — use <code>undici.Agent</code> or an
+              HTTPS proxy-aware fetch
+            </li>
+            <li>
+              <strong>Auto CSRF / XSRF token attachment</strong> — trivial to add as a request
+              interceptor
+            </li>
+            <li>
+              <strong>Automatic retry / backoff</strong> — see
+              <a href="#retry-backoff">recipe above</a>
+            </li>
+            <li>
+              <strong><code>maxContentLength</code> / <code>maxRedirects</code></strong> — not
+              exposed
+            </li>
           </ul>
         </div>
       </section>
@@ -491,10 +649,21 @@ const api = HttpClient.create({
         <div class="container">
           <h2>Browser &amp; Node support</h2>
           <ul>
-            <li><strong>Browsers</strong> — any that implement <code>fetch</code>, <code>AbortController</code>, <code>FormData</code>, and <code>XMLHttpRequest</code> (all evergreen browsers).</li>
-            <li><strong>Node.js</strong> — 20+ (native <code>fetch</code>). Upload progress is browser-only since Node has no <code>XMLHttpRequest</code>; use <code>request()</code> with a <code>ReadableStream</code> body instead.</li>
+            <li>
+              <strong>Browsers</strong> — any that implement <code>fetch</code>,
+              <code>AbortController</code>, <code>FormData</code>, and
+              <code>XMLHttpRequest</code> (all evergreen browsers).
+            </li>
+            <li>
+              <strong>Node.js</strong> — 20+ (native <code>fetch</code>). Upload progress is
+              browser-only since Node has no <code>XMLHttpRequest</code>; use
+              <code>request()</code> with a <code>ReadableStream</code> body instead.
+            </li>
           </ul>
-          <p>Build target: ES2020. Ships ESM <strong>and</strong> CommonJS with proper <code>exports</code> conditions.</p>
+          <p>
+            Build target: ES2020. Ships ESM <strong>and</strong> CommonJS with proper
+            <code>exports</code> conditions.
+          </p>
         </div>
       </section>
     </main>
@@ -506,19 +675,47 @@ const api = HttpClient.create({
           <p class="footer-tagline">Tiny, zero-dependency, axios-compatible HTTP client.</p>
         </div>
         <div class="footer-links">
-          <a href="https://github.com/Abbosbek-cloud/tiny-fetch" rel="noopener" target="_blank">GitHub</a>
-          <a href="https://www.npmjs.com/package/@syncsoft/tiny-fetch" rel="noopener" target="_blank">npm</a>
-          <a href="https://github.com/Abbosbek-cloud/tiny-fetch/blob/main/LICENSE" rel="noopener" target="_blank">License (MIT)</a>
-          <a href="https://github.com/Abbosbek-cloud/tiny-fetch/blob/main/SECURITY.md" rel="noopener" target="_blank">Security</a>
+          <a href="https://github.com/Abbosbek-cloud/tiny-fetch" rel="noopener" target="_blank"
+            >GitHub</a
+          >
+          <a
+            href="https://www.npmjs.com/package/@syncsoft/tiny-fetch"
+            rel="noopener"
+            target="_blank"
+            >npm</a
+          >
+          <a
+            href="https://github.com/Abbosbek-cloud/tiny-fetch/blob/main/LICENSE"
+            rel="noopener"
+            target="_blank"
+            >License (MIT)</a
+          >
+          <a
+            href="https://github.com/Abbosbek-cloud/tiny-fetch/blob/main/SECURITY.md"
+            rel="noopener"
+            target="_blank"
+            >Security</a
+          >
         </div>
       </div>
-      <p class="footer-copy">© <span id="year">2026</span> Abbosbek. Released under the MIT license.</p>
+      <p class="footer-copy">
+        © <span id="year">2026</span> Abbosbek. Released under the MIT license.
+      </p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-diff.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-diff.min.js"
+      defer
+    ></script>
     <script src="script.js" defer></script>
   </body>
 </html>
