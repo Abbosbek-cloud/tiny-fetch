@@ -1,0 +1,94 @@
+{
+  "name": "@syncsoft/tiny-fetch",
+  "version": "0.1.0",
+  "description": "Tiny, zero-dependency, axios-compatible HTTP client built on fetch. ~6KB, full TypeScript, interceptors, timeouts, progress uploads.",
+  "keywords": [
+    "http",
+    "http-client",
+    "fetch",
+    "axios",
+    "axios-alternative",
+    "ajax",
+    "rest",
+    "xhr",
+    "interceptors",
+    "typescript",
+    "zero-dependency",
+    "tiny",
+    "browser",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/Abbosbek-cloud/tinyfetch#readme",
+  "bugs": {
+    "url": "https://github.com/Abbosbek-cloud/tinyfetch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abbosbek-cloud/tinyfetch.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Abbosbek",
+    "email": "abek01sulaymonov@gmail.com"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "rm -rf dist coverage",
+    "prepublishOnly": "npm run build",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.6.0",
+    "@changesets/cli": "^2.31.0",
+    "@eslint/js": "^9.39.4",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.3",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.0",
+    "vitest": "^3.2.4"
+  }
+}
