@@ -1,5 +1,11 @@
 # @syncsoft/tiny-fetch
 
+## 0.1.2
+
+### Patch Changes
+
+- [`b121504`](https://github.com/Abbosbek-cloud/tiny-fetch/commit/b121504e325e8bed48ea02fdf32b3048d2c2f6d4) Thanks [@Abbosbek-cloud](https://github.com/Abbosbek-cloud)! - Docs: add a dedicated documentation site at https://abbosbek-cloud.github.io/tiny-fetch/ and point `package.json` `homepage` at it (was the README anchor on GitHub).
+
 ## 0.1.1
 
 ### Patch Changes
