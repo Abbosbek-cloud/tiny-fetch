@@ -15,7 +15,7 @@ Only the latest minor release line is supported with security updates.
 
 Report vulnerabilities privately via one of:
 
-1. GitHub's [private vulnerability reporting form](https://github.com/Abbosbek-cloud/tinyfetch/security/advisories/new) (preferred).
+1. GitHub's [private vulnerability reporting form](https://github.com/Abbosbek-cloud/tiny-fetch/security/advisories/new) (preferred).
 2. Email <abek01sulaymonov@gmail.com> with the subject line `[tiny-fetch security]`.
 
 Please include:

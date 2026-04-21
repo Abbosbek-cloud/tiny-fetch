@@ -18,13 +18,13 @@
     "browser",
     "nodejs"
   ],
-  "homepage": "https://github.com/Abbosbek-cloud/tinyfetch#readme",
+  "homepage": "https://github.com/Abbosbek-cloud/tiny-fetch#readme",
   "bugs": {
-    "url": "https://github.com/Abbosbek-cloud/tinyfetch/issues"
+    "url": "https://github.com/Abbosbek-cloud/tiny-fetch/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Abbosbek-cloud/tinyfetch.git"
+    "url": "git+https://github.com/Abbosbek-cloud/tiny-fetch.git"
   },
   "license": "MIT",
   "author": {

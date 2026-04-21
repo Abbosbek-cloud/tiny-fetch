@@ -7,8 +7,8 @@ Thanks for your interest in improving **tiny-fetch**. This guide covers the dev 
 Requires **Node >= 20** and **npm >= 10**.
 
 ```sh
-git clone https://github.com/Abbosbek-cloud/tinyfetch.git
-cd tinyfetch
+git clone https://github.com/Abbosbek-cloud/tiny-fetch.git
+cd tiny-fetch
 npm ci
 ```
 

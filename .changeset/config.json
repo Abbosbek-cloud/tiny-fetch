@@ -1,7 +1,7 @@
 {
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "Abbosbek-cloud/tinyfetch" }
+    { "repo": "Abbosbek-cloud/tiny-fetch" }
   ],
   "commit": false,
   "fixed": [],
