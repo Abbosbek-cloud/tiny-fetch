@@ -7,6 +7,8 @@
 [![types](https://img.shields.io/npm/types/@syncsoft/tiny-fetch)](https://www.npmjs.com/package/@syncsoft/tiny-fetch)
 [![license](https://img.shields.io/npm/l/@syncsoft/tiny-fetch)](./LICENSE)
 
+📖 **Docs**: <https://abbosbek-cloud.github.io/tiny-fetch/>
+
 - **Zero runtime dependencies**
 - **~2.5 KB** min+gzip (vs axios ~13.5 KB)
 - **Axios-compatible** — drop-in for most use cases (`response.data`, `error.response.data/status`, interceptors)

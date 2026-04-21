@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abbosbek-cloud.github.io/tiny-fetch/sitemap.xml
