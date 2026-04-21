@@ -1,6 +1,6 @@
 {
   "name": "@syncsoft/tiny-fetch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tiny, zero-dependency, axios-compatible HTTP client built on fetch. ~6KB, full TypeScript, interceptors, timeouts, progress uploads.",
   "keywords": [
     "http",
